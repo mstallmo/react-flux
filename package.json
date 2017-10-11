@@ -1,0 +1,24 @@
+{
+  "name": "react-flux",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mstallmo/react-flux.git"
+  },
+  "author": "Mason Stallmo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mstallmo/react-flux/issues"
+  },
+  "homepage": "https://github.com/mstallmo/react-flux#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-open": "^2.0.0"
+  }
+}
