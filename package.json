@@ -30,7 +30,9 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "reactify": "^1.1.1",
+    "toastr": "^2.1.2",
     "vinyl-source-stream": "^1.1.0"
   }
 }

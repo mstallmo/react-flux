@@ -1,41 +1,10 @@
-$ = jQuery = require('jquery');
+"use strict";
 const React = require('react');
 const ReactDOM = require('react-dom');
-const Home = require('./components/homePage');
-const About = require('./components/about/aboutPage');
-const Header = require('./components/common/header');
-const Authors = require('./components/authors/authorPage');
+const HashRouter = require('react-router-dom').HashRouter;
+const App = require('./components/app');
 
-class App extends React.Component {
-    render() {
-        let Child;
-
-        switch(this.props.route) {
-            case 'about':
-                Child = About;
-                break;
-            case 'authors':
-                Child = Authors;
-                break;
-            default:
-                Child = Home;
-                break;
-        }
-
-        return (
-            <div>
-                <Header />
-                <Child />
-            </div>
-        );
-    }
-}
-
-function render () {
-    const route = window.location.hash.substr(1);
-
-    ReactDOM.render(<App route={route} />, document.getElementById('app'));
-}
-
-window.addEventListener('hashchange', render);
-render();
+ReactDOM.render((
+    <HashRouter>
+        <App />
+    </HashRouter>), document.getElementById('app'));

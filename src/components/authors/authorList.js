@@ -1,12 +1,13 @@
 "use strict";
 
 const React = require('react');
+const Link = require('react-router-dom').Link;
 
 const AuthorList = (props) => {
     const createAuthorRow = function(author) {
         return (
             <tr key={author.id}>
-                <td><a href={"/#authors/" + author.id}>{author.id}</a></td>
+                <td><Link to={`/author/${author.id}`}>{author.id}</Link></td>
                 <td>{author.firstName} {author.lastName}</td>
             </tr>
         );
