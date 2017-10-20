@@ -25,7 +25,7 @@ const AuthorApi = {
         console.log('Pretend this just saved the author via ajax call...');
 
         if (author.id) {
-            const exitingAuthorIndex = _.indexOf(authors, _.find(authors, {id: author.id}));
+            const existingAuthorIndex = _.indexOf(authors, _.find(authors, {id: author.id}));
             authors.splice(existingAuthorIndex, 1, author);
         } else {
             author.id = _generateId(author);
