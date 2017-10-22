@@ -5,7 +5,6 @@ const Link = require('react-router-dom').Link;
 const AuthorStore = require('../../stores/authorStore');
 const AuthorList = require('./authorList');
 
-
 class Authors extends React.Component {
     constructor(props) {
         super(props);

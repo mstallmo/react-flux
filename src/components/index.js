@@ -18,7 +18,7 @@ const Index = () => (
         <Route path="/authors" component={Authors} />
         <Route exact path="/author" component={ManageAuthors} />
         <Route path="/author/:id" component={ManageAuthors} />
-        <Route exact path="/courses" component={Courses} />
+        <Route path="/courses" component={Courses} />
         <Route exact path="/course" component={ManageCourses} />
         <Route path="/course/:id" component={ManageCourses} />
         <Route component={NotFound} />

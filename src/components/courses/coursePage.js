@@ -2,26 +2,25 @@
 
 const React = require('react');
 const Link = require('react-router-dom').Link;
+const CourseStore = require('../../stores/courseStore');
 const CourseList = require('./courseList');
 
 class Courses extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { courses: [
-            {
-                id: 1,
-                title: "Test Course",
-                author:
-                    {
-                        id: 'cory-house',
-                        firstName: 'Cory',
-                        lastName: 'House'
-                    },
-                category: "Test",
-                length: "3:10"
-            }
-        ]
-        }
+        this.state = { courses: CourseStore.getAllCourses() };
+    }
+
+    componentWillMount() {
+        CourseStore.addChangeListener(() => this._onChange());
+    }
+
+    componentWillUnmount() {
+        CourseStore.removeChangeListener(() => this._onChange());
+    }
+
+    _onChange() {
+        this.setState({ courses: CourseStore.getAllCourses() });
     }
 
     render() {

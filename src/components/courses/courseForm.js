@@ -5,6 +5,18 @@ const Input = require('../common/textInput');
 const DropDown = require('../common/dropDown');
 
 class CourseForm extends React.Component {
+
+    convertToOptions(authors) {
+        let options = [];
+        for(let i = 0; i < authors.length; i += 1 ) {
+            options[i] = {
+                id: authors[i].id,
+                text: authors[i].firstName + ' ' + authors[i].lastName
+            }
+        }
+        return options;
+    }
+
     render() {
         return (
           <form>
@@ -12,25 +24,26 @@ class CourseForm extends React.Component {
               <Input name="title"
                      label="Title"
                      value={this.props.title}
-                     onChange={this.props.onTitleChange}
+                     onChange={this.props.onChange}
                      error={this.props.errors.title} />
               <DropDown name="author"
                         label="Author"
-                        authors={this.props.authors}
-                        value={this.props.author}
+                        options={this.convertToOptions(this.props.authors)}
+                        value={this.props.author.id}
                         onChange={this.props.onAuthorChange}
                         error={this.props.errors.author} />
               <Input name="category"
                      label="Category"
                      value={this.props.category}
-                     onChange={this.props.onCategoryChange}
+                     onChange={this.props.onChange}
                      error={this.props.errors.category} />
 
               <Input name="length"
                      label="Length"
                      value={this.props.length}
-                     onChange={this.props.onLengthChange}
+                     onChange={this.props.onChange}
                      error={this.props.errors.length} />
+              <input type="submit" value="Save" className="btn btn-default" onClick={this.props.onSave} />
           </form>
         );
     }

@@ -1,6 +1,6 @@
 "use strict";
 
-var Dispatcher = require('../dispatcher/appDispatcher');
+const Dispatcher = require('../dispatcher/appDispatcher');
 const AuthorApi = require('../api/authorApi');
 const ActionTypes = require('../constants/actionTypes');
 

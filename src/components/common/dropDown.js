@@ -9,10 +9,10 @@ class DropDown extends React.Component {
             wrapperClass += " " + 'has-error';
         }
 
-        const authors = this.props.authors;
-        const authorList =  authors.map((author) => (
-            <option key={author.id} value={author}>{author.firstName} {author.lastName}</option>
-        ));
+        const options = this.props.options;
+        const optionList =  options.map((option) =>
+            <option key={option.id} value={option.id}>{option.text}</option>
+        );
 
         return (
             <div className={wrapperClass}>
@@ -20,9 +20,9 @@ class DropDown extends React.Component {
                 <div className="field">
                     <select className="form-control"
                             name={this.props.name}
-                            value={this.props.value}
-                            onChange={this.props.onChange}>
-                        {authorList};
+                            onChange={this.props.onChange}
+                            defaultValue={this.props.value} >
+                        {optionList};
                     </select>
                     <div className="input">{this.props.error}</div>
                 </div>

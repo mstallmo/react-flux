@@ -2,15 +2,23 @@
 
 const React = require('react');
 const Link = require('react-router-dom').Link;
+const CourseActions = require('../../actions/courseActions');
+const toastr = require('toastr');
 
 const CourseList = (props) => {
+    const deleteCourse = (id, event) => {
+        event.preventDefault();
+        CourseActions.deleteCourse(id);
+        toastr.success('Course Deleted');
+    };
+
     const createCourseRow = (course) => {
         return(
           <tr key={course.id}>
               <td><a href="#">Watch</a></td>
-              <td><a href="#">Delete</a></td>
-              <td><Link to={`/courses/${course.id}`}>{course.title}</Link></td>
-              <td>{course.author.firstName} {course.author.lastName}</td>
+              <td><a href="#" onClick={deleteCourse.bind(this, course.id)}>Delete</a></td>
+              <td><Link to={`/course/${course.id}`}>{course.title}</Link></td>
+              <td>{course.author.name}</td>
               <td>{course.category}</td>
               <td>{course.length}</td>
           </tr>
