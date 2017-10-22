@@ -52742,7 +52742,6 @@ const InitializeActions = {
 };
 
 module.exports = InitializeActions;
-
 },{"../api/authorApi":81,"../constants/actionTypes":99,"../dispatcher/appDispatcher":100}],81:[function(require,module,exports){
 "use strict";
 
@@ -53395,7 +53394,6 @@ const Index = () => (
 );
 
 module.exports = Index;
-
 },{"./about/aboutPage":83,"./authors/authorPage":87,"./authors/manageAuthorPage":88,"./courses/coursePage":94,"./courses/manageCoursePage":95,"./homePage":96,"./notFoundPage":98,"react":73,"react-router":68,"react-router-dom":58}],98:[function(require,module,exports){
 "use strict";
 
